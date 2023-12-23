@@ -1,0 +1,68 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--modal-overlay-bg, rgba(0, 0, 0, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--modal-overlay-zindex, 1000);
+}
+
+.modal-content {
+  background-color: var(--modal-content-bg, white);
+  padding: var(--modal-content-padding, 25px);
+  border-radius: var(--modal-content-radius, 8px);
+  box-shadow: var(--modal-content-shadow, 0 4px 8px rgba(0, 0, 0, 0.2));
+  width: var(--modal-content-width, 500px);
+  max-width: var(--modal-content-max-width, 90%);
+  position: relative;
+  overflow-y: auto;
+}
+
+.modal-title {
+  font-size: var(--modal-title-font-size, 24px);
+  font-weight: var(--modal-title-font-weight, bold);
+  color: var(--modal-title-color, black);
+  margin-bottom: var(--modal-title-margin-bottom, 20px);
+}
+
+.modal-title h2 {
+  margin: 0;
+}
+
+.modal-body {
+  font-size: var(--modal-body-font-size, 16px);
+  color: var(--modal-body-color, black);
+  margin-bottom: var(--modal-body-margin-bottom, 20px);
+}
+
+.modal-close-button {
+  background-color: var(--modal-close-btn-bg, blue);
+  color: var(--modal-close-btn-color, white);
+  border: none;
+  padding: var(--modal-close-btn-padding, 10px 20px);
+  border-radius: var(--modal-close-btn-radius, 4px);
+  cursor: pointer;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: var(--modal-close-btn-hover-bg, darkblue);
+}
+
+.modal-close-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: var(--modal-close-icon-size, 32px);
+  line-height: 0.5;
+  color: var(--modal-close-icon-color, black);
+}
+
+.modal-footer {
+  text-align: right;
+}
