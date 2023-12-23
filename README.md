@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# React Modal Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A customizable and accessible modal dialog component for React applications.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Install the component using npm:
 
-### `npm start`
+```bash
+npm install react-modal-aurelio --save
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Import the `Modal` component in your React application and use it as follows:
 
-### `npm test`
+```jsx
+import React, { useState } from 'react'
+import Modal from 'react-modal-aurelio'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+function App() {
+  const [isOpen, setIsOpen] = useState(false)
 
-### `npm run build`
+  const openModal = () => setIsOpen(true)
+  const closeModal = () => setIsOpen(false)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  return (
+    <>
+      <button onClick={openModal}>Open Modal</button>
+      <Modal
+        isOpen={isOpen}
+        onClose={closeModal}
+        title='Your Title Here'
+        content={<p>Your content here</p>}
+      />
+    </>
+  )
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default App
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Props
 
-### `npm run eject`
+The component accepts the following props:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Prop                   | Type     | Description                              |
+| ---------------------- | -------- | ---------------------------------------- |
+| `isOpen`               | boolean  | Controls the visibility of the modal.    |
+| `onClose`              | function | Callback function to close the modal.    |
+| `title`                | string   | The title content of the modal.          |
+| `content`              | node     | The body content of the modal.           |
+| `overlayClassName`     | string   | Custom class for the modal overlay.      |
+| `contentClassName`     | string   | Custom class for the modal content.      |
+| `titleClassName`       | string   | Custom class for the modal title.        |
+| `bodyClassName`        | string   | Custom class for the modal body.         |
+| `footerClassName`      | string   | Custom class for the modal footer.       |
+| `closeButtonClassName` | string   | Custom class for the modal close button. |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Styling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You can style the modal using the provided CSS class names or by passing your own custom classes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Accessibility
 
-## Learn More
+The Modal component follows WAI-ARIA best practices for modal dialogs, ensuring that it is accessible to users with disabilities.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Distributed under the MIT License.
