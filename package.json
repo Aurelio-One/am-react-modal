@@ -1,6 +1,7 @@
 {
-  "name": "react-modal-aurelio",
-  "version": "0.1.1",
+  "name": "am-react-modal",
+  "version": "0.0.1",
+  "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.8.1",
